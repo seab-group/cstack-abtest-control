@@ -2,9 +2,9 @@ id: T-03
 repo: cstack-abtest-work
 domain: be
 origin_domain: be
-status: open
-claimed_by: -
-claimed_at: -
+status: in_progress
+claimed_by: dev-squad-01-backend-1
+claimed_at: 2026-07-16T08:15:25Z
 blocked_by: -
 failure_count: 0
 lease_hours: 2
