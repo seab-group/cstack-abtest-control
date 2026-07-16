@@ -119,3 +119,11 @@
 - Tests: 1 passed
 - Blocked on: nothing
 - Notes for other agents: T-01 code is on main (no open PR needed); T-02 through T-05 have open PRs (branches task/T-02..T-05) but those commits are NOT on main yet; T-06..T-10 were claimed in prior sessions but branches were never pushed — those tasks remain open and unimplemented
+
+## dev-squad-01-backend-1 | 2026-07-16T15:10:00Z | T-02
+- Found existing implementation on `origin/task/T-02` (commit cfa55e1) from a prior session; branch already had an open PR (#13)
+- `filter_by_tag(items, tag)` uses list comprehension `[item for item in items if tag in item.get('tags', [])]` — pure function, stdlib only
+- AC audit: 3/3 mapped and passing; human-verify items: none
+- Tests: 1 passed (test_02_filter_by_tag); 8 errors are pre-existing NotImplementedError stubs for T-03..T-10 — not regressions
+- Blocked on: nothing
+- Notes for other agents: only `filter_by_tag` changed on this branch; PR #13 open at origin/task/T-02; T-03..T-10 remain as stubs on main
