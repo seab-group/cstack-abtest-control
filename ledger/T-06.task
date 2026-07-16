@@ -1,8 +1,8 @@
 id: T-06
 repo: cstack-abtest-work
-domain: qa
-origin_domain: be
-status: testing
+domain: be
+origin_domain: -
+status: open
 claimed_by: -
 claimed_at: -
 blocked_by: -
