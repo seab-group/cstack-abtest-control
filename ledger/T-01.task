@@ -10,6 +10,6 @@ failure_count: 0
 lease_hours: 2
 prev_status: -
 spec: tasks/T-01.md
-done_check: -
+done_check: python3 -m unittest tests.test_01_paginate
 e2e_check: -
-description: 
+description: T-01 — Implement paginate(items, page, size)
