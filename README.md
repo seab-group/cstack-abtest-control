@@ -43,3 +43,4 @@ The whole point of this project — measure whether the phased loop is cheaper.
 
 Each task is a pure function with an independent gate, so tasks don't interfere and the gate is
 deterministic — ideal for a clean comparison.
+# cstack-abtest-control
