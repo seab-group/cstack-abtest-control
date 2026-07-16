@@ -69,3 +69,11 @@
 - Tests: 1 passed (test_06_word_count); other stubs (NotImplementedError) are pre-existing — not regressions
 - Blocked on: nothing
 - Notes for other agents: only `word_count` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/7
+
+## dev-squad-01-backend-1 | 2026-07-16T10:20:00Z | T-07
+- Implemented `validate_title(title)` in `content_service/features.py` — strips whitespace, raises ValueError if empty/whitespace-only
+- `title.strip()` then `if not stripped: raise ValueError(...)` — pure function, stdlib only
+- AC audit: 2/2 mapped and passing; human-verify items: none
+- Tests: 1 passed (test_07_validate_title); other stubs (NotImplementedError) are pre-existing — not regressions
+- Blocked on: nothing
+- Notes for other agents: only `validate_title` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/8
