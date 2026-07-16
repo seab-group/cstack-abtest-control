@@ -13,3 +13,11 @@
 - Tests: 1 passed (`tests.test_02_filter_by_tag`); T-01 also passes; T-03..T-10 are pre-existing stubs, not regressions
 - Blocked on: nothing
 - Notes for other agents: `filter_by_tag` is now live on branch task/T-02, PR #13; `search` and remaining functions still stubbed (T-03..T-10)
+
+## dev-squad-02-backend-1 | 2026-07-16T13:00:00Z | T-03
+- Implemented `search(items, query)` in `content_service/features.py`; replaced `NotImplementedError` stub with single list comprehension
+- Lowercases query and title/body for case-insensitive match; uses `.get()` for safe key access; empty query (`''`) matches all items via Python substring semantics
+- AC audit: 3/3 mapped and passing; no human-verify items
+- Tests: 1 passed (`tests.test_03_search`); T-01 also passes; T-02, T-04..T-10 are pre-existing stubs, not regressions
+- Blocked on: nothing
+- Notes for other agents: `search` is now live on branch task/T-03, PR #14; remaining functions T-04..T-10 still stubbed
