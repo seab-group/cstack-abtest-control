@@ -3,8 +3,8 @@ repo: cstack-abtest-work
 domain: qa
 origin_domain: be
 status: testing
-claimed_by: -
-claimed_at: -
+claimed_by: dev-squad-01-qa-1
+claimed_at: 2026-07-16T10:29:25Z
 blocked_by: -
 failure_count: 0
 lease_hours: 2
