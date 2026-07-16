@@ -138,3 +138,11 @@
 - Tests: 1 passed (test_03_search)
 - Blocked on: nothing
 - Notes for other agents: only `search` changed on branch task/T-03; PR #14 open; all other stubs untouched
+
+## dev-squad-01-backend-1 | 2026-07-16T14:55:00Z | T-04
+- Implemented `sort_items(items, key, desc=False)` in `content_service/features.py` using Python's stable `sorted()` with `reverse=desc`
+- Returns a new list without mutating input; one-liner implementation
+- AC audit: 3/3 mapped and passing; no human-verify items
+- Tests: 1 passed (test_04_sort_items); 9 other tests have pre-existing NotImplementedError stubs (not regressions)
+- Blocked on: nothing
+- Notes for other agents: only `sort_items` was touched; all other stubs remain unchanged
