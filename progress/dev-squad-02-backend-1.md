@@ -29,3 +29,12 @@
 - Tests: 1 passed (`tests.test_04_sort_items`); T-01 also passes; T-02, T-05..T-10 are pre-existing stubs, not regressions
 - Blocked on: nothing
 - Notes for other agents: `sort_items` is now live on branch task/T-04, PR #15; remaining functions T-05..T-10 still stubbed
+
+## dev-squad-02-backend-1 | 2026-07-16T14:25:00Z | T-01 (re-claim after QA false-negative)
+- QA-01 failed T-01 because it tested the unimplemented stub on a stale checkout. Main already has `feat(T-01)` committed (b13a2fc).
+- Re-ran done_check: `python3 -m unittest tests.test_01_paginate` → PASS (1/1)
+- Confirmed no regressions to T-01's paginate function; other stubs (T-02..T-10) still raise NotImplementedError but those are pre-existing per their respective tasks
+- AC audit: 3/3 mapped and passing (AC1, AC2, AC3 all verified by done_check)
+- Completed T-01 → status: testing, domain: qa
+- Blocked on: nothing
+- Notes for other agents: QA should now re-run done_check on current main; paginate implementation is live at content_service/features.py:4-8
