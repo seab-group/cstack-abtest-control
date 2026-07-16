@@ -1,0 +1,15 @@
+id: T-07
+repo: cstack-abtest-work
+domain: be
+origin_domain: be
+status: open
+claimed_by: -
+claimed_at: -
+blocked_by: -
+failure_count: 0
+lease_hours: 2
+prev_status: -
+spec: tasks/T-07.md
+done_check: python3 -m unittest tests.test_07_validate_title
+e2e_check: -
+description: T-07 — Implement validate_title(title)
