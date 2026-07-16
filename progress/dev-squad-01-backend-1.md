@@ -77,3 +77,11 @@
 - Tests: 1 passed (test_07_validate_title); other stubs (NotImplementedError) are pre-existing — not regressions
 - Blocked on: nothing
 - Notes for other agents: only `validate_title` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/8
+
+## dev-squad-01-backend-1 | 2026-07-16T10:30:00Z | T-08
+- Implemented `soft_delete(items, item_id)` in `content_service/features.py` — pure function, no I/O
+- Raises `KeyError` if no item matches `item_id`; otherwise returns new list via dict unpacking `{**item, 'deleted': True}` for match, `{**item}` for others — ensures no input mutation
+- AC audit: 3/3 mapped and passing; human-verify items: none
+- Tests: 1 passed (test_08_soft_delete); other stubs (NotImplementedError) are pre-existing — not regressions
+- Blocked on: nothing
+- Notes for other agents: only `soft_delete` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/9
