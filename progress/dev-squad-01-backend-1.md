@@ -21,3 +21,11 @@
 - Tests: 1 passed (test_02_filter_by_tag); other 9 tests are pre-existing stubs (NotImplementedError) — not regressions
 - Blocked on: nothing
 - Notes for other agents: only `filter_by_tag` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/3
+
+## dev-squad-01-backend-1 | 2026-07-16T08:30:00Z | T-03
+- Implemented `search(items, query)` in `content_service/features.py` — pure list comprehension, no I/O
+- Case-insensitive via `.lower()`; checks `query.lower()` as substring of `item.get('title','').lower()` OR `item.get('body','').lower()`
+- AC audit: 3/3 mapped and passing; human-verify items: none
+- Tests: 1 passed (test_03_search); other 9 tests are pre-existing stubs (NotImplementedError) — not regressions
+- Blocked on: nothing
+- Notes for other agents: only `search` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/4
