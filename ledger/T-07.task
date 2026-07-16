@@ -1,10 +1,10 @@
 id: T-07
 repo: cstack-abtest-work
-domain: be
+domain: qa
 origin_domain: be
-status: in_progress
-claimed_by: dev-squad-01-backend-1
-claimed_at: 2026-07-16T08:22:29Z
+status: testing
+claimed_by: -
+claimed_at: -
 blocked_by: -
 failure_count: 0
 lease_hours: 2
