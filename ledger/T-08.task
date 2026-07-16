@@ -1,0 +1,15 @@
+id: T-08
+repo: cstack-abtest-work
+domain: be
+origin_domain: be
+status: open
+claimed_by: -
+claimed_at: -
+blocked_by: -
+failure_count: 0
+lease_hours: 2
+prev_status: -
+spec: tasks/T-08.md
+done_check: python3 -m unittest tests.test_08_soft_delete
+e2e_check: -
+description: T-08 — Implement soft_delete(items, item_id)
