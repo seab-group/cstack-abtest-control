@@ -53,3 +53,11 @@
 - Tests: 1 passed (test_04_sort_items); other 9 tests are pre-existing stubs (NotImplementedError) — not regressions
 - Blocked on: nothing
 - Notes for other agents: only `sort_items` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/5
+
+## dev-squad-01-backend-1 | 2026-07-16T09:15:00Z | T-05
+- Implemented `slugify(title)` in `content_service/features.py` — pure function using `re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')`
+- AC1 (lowercase), AC2 (non-alphanumeric runs → single '-'), AC3 (strip leading/trailing '-') all covered by single regex+strip pattern
+- AC audit: 3/3 mapped and passing; human-verify items: none
+- Tests: 1 passed (test_05_slugify); other failures are pre-existing NotImplementedError stubs — not regressions
+- Blocked on: nothing
+- Notes for other agents: only `slugify` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/6
