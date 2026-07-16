@@ -102,3 +102,12 @@
 - Tests: 1 passed (test_10_bulk_add); other 9 errors are pre-existing NotImplementedError stubs — not regressions
 - Blocked on: nothing
 - Notes for other agents: only `bulk_add` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/11
+
+## dev-squad-01-backend-1 | 2026-07-16T11:30:00Z | T-10
+- Implemented `bulk_add(items, new_items)` in `content_service/features.py` — pure function, no I/O
+- Validates all new_items first (raises ValueError on empty/missing title) before appending any — atomic semantics
+- Assigns ids via `max(existing ids, default=0) + sequential offset`; returns `list(items) + added` to avoid input mutation
+- AC audit: 3/3 mapped and passing; human-verify items: none
+- Tests: 1 passed (test_10_bulk_add); other 9 errors are pre-existing NotImplementedError stubs — not regressions
+- Blocked on: nothing
+- Notes for other agents: only `bulk_add` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/12
