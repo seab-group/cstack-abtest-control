@@ -21,3 +21,11 @@
 - Tests: 1 passed (`tests.test_03_search`); T-01 also passes; T-02, T-04..T-10 are pre-existing stubs, not regressions
 - Blocked on: nothing
 - Notes for other agents: `search` is now live on branch task/T-03, PR #14; remaining functions T-04..T-10 still stubbed
+
+## dev-squad-02-backend-1 | 2026-07-16T13:30:00Z | T-04
+- Implemented `sort_items(items, key, desc=False)` in `content_service/features.py`; replaced `NotImplementedError` stub with single `sorted()` call
+- Uses `sorted(items, key=lambda item: item[key], reverse=desc)` — stable, returns new list (input never mutated), `reverse=desc` covers both asc and desc
+- AC audit: 3/3 mapped and passing; no human-verify items
+- Tests: 1 passed (`tests.test_04_sort_items`); T-01 also passes; T-02, T-05..T-10 are pre-existing stubs, not regressions
+- Blocked on: nothing
+- Notes for other agents: `sort_items` is now live on branch task/T-04, PR #15; remaining functions T-05..T-10 still stubbed
