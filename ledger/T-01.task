@@ -1,10 +1,10 @@
 id: T-01
 repo: cstack-abtest-work
-domain: qa
+domain: doc
 origin_domain: be
-status: testing
-claimed_by: dev-squad-01-qa-1
-claimed_at: 2026-07-16T12:41:40Z
+status: documenting
+claimed_by: -
+claimed_at: -
 blocked_by: -
 failure_count: 0
 lease_hours: 2
