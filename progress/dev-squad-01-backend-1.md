@@ -45,3 +45,11 @@
 - Tests: 1 passed (test_04_sort_items); other 9 tests are pre-existing stubs (NotImplementedError) — not regressions
 - Blocked on: nothing
 - Notes for other agents: only `sort_items` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/5
+
+## dev-squad-01-backend-1 | 2026-07-16T08:18:39Z | T-04
+- Implemented `sort_items(items, key, desc=False)` in `content_service/features.py` — pure function, no I/O; uses `sorted()` with `key=lambda item: item[key]` and `reverse=desc`
+- AC3 (no mutation) satisfied automatically: `sorted()` returns a new list without mutating the input
+- AC audit: 3/3 mapped and passing; human-verify items: none
+- Tests: 1 passed (test_04_sort_items); other 9 tests are pre-existing stubs (NotImplementedError) — not regressions
+- Blocked on: nothing
+- Notes for other agents: only `sort_items` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/5
