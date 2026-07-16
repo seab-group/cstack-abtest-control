@@ -127,3 +127,14 @@
 - Tests: 1 passed (test_02_filter_by_tag); 8 errors are pre-existing NotImplementedError stubs for T-03..T-10 — not regressions
 - Blocked on: nothing
 - Notes for other agents: only `filter_by_tag` changed on this branch; PR #13 open at origin/task/T-02; T-03..T-10 remain as stubs on main
+
+## dev-squad-01-backend-1 | 2026-07-16T15:30:00Z | T-03
+- Found existing implementation on `origin/task/T-03` (commit da35efb) from a prior session; PR #14 already open
+- `search(items, query)` uses `q = query.lower()` then list comprehension checking `q in item.get('title','').lower() or q in item.get('body','').lower()` — pure function, stdlib only
+- AC audit: 3/3 mapped and passing; human-verify items: none
+  - AC1: case-insensitive title OR body match ✓
+  - AC2: empty list when nothing matches ✓
+  - AC3: empty query (`''`) is substring of every string → matches all ✓
+- Tests: 1 passed (test_03_search)
+- Blocked on: nothing
+- Notes for other agents: only `search` changed on branch task/T-03; PR #14 open; all other stubs untouched
