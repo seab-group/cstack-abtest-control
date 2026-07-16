@@ -1,0 +1,15 @@
+id: T-04
+repo: cstack-abtest-work
+domain: be
+origin_domain: be
+status: open
+claimed_by: -
+claimed_at: -
+blocked_by: -
+failure_count: 0
+lease_hours: 2
+prev_status: -
+spec: tasks/T-04.md
+done_check: python3 -m unittest tests.test_04_sort_items
+e2e_check: -
+description: T-04 — Implement sort_items(items, key, desc=False)
