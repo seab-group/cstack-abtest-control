@@ -1,10 +1,10 @@
 id: T-10
 repo: cstack-abtest-work
 domain: be
-origin_domain:-
-status: open
-claimed_by: -
-claimed_at: -
+origin_domain: -
+status: in_progress
+claimed_by: dev-squad-01-backend-1
+claimed_at: 2026-07-16T10:16:10Z
 blocked_by: -
 failure_count: 0
 lease_hours: 2
