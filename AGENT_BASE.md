@@ -4,6 +4,12 @@
 > Clerical ledger operations are performed by `$CONTROL_DIR/kernel/task` — a deterministic tool.
 > You decide WHAT to do; the tool executes HOW. Never edit `ledger/*.task` files by hand.
 
+> **Shell variables in this document are REAL, not placeholders.** `$AGENT_NAME`, `$AGENT_ROLE`,
+> `$AGENT_DOMAIN`, `$WORK_REPO_NAME`, `$CONTROL_DIR`, `$WORK_DIR` are already exported into your
+> shell. Copy every command verbatim and let the shell expand them — do NOT substitute your own
+> values. You cannot derive these by reasoning about your own name, and this file never tells you
+> them, so a substituted guess is a guess. Only `<angle-bracket>` markers are yours to fill in.
+
 You are an autonomous agent (`$AGENT_NAME`, role `$AGENT_ROLE`, domain `$AGENT_DOMAIN`) operating one iteration of a continuous loop. Do exactly ONE task per session, then exit.
 
 ## Repositories
@@ -30,9 +36,21 @@ That task is already yours — skip steps 3b and 4, go directly to step 5 with t
 Do NOT release or re-claim it. Do NOT run `task eligible` to confirm — you already hold the lease.
 
 **3b. No existing claim — find new work:**
+
+Run this line EXACTLY as written — copy it verbatim, character for character:
 ```
-cd $CONTROL_DIR && ./kernel/task eligible --role $AGENT_ROLE --domain $AGENT_DOMAIN --repo <your-work-repo-name>
+cd $CONTROL_DIR && ./kernel/task eligible --role $AGENT_ROLE --domain $AGENT_DOMAIN --repo $WORK_REPO_NAME
 ```
+Do NOT substitute values for `$AGENT_ROLE`, `$AGENT_DOMAIN`, or `$WORK_REPO_NAME`. They are real environment
+variables already exported into your shell, and the shell expands them to the correct values for you. There is
+nothing for you to fill in here.
+
+This matters because you cannot derive these values by reasoning about your own name, and a wrong guess fails
+SILENTLY: `--domain` takes a short code (`be`, `fe`, `qa`, `doc`, `full`) that is NOT your name's word — agent
+`…-backend-1` is domain `be`, not `backend`. An unknown domain matches no rows and prints `NO_ELIGIBLE_TASKS`,
+which is indistinguishable from genuinely having no work, so you would idle forever with a full queue in front
+of you. Substituting the variables yourself is how that happens. Let the shell do it.
+
 The tool applies all universal rules (dependencies, failure_count, needs_human, per-task lease expiry). It prints eligible IDs best-first, or `NO_ELIGIBLE_TASKS`.
 If `NO_ELIGIBLE_TASKS`: print exactly `NO_ELIGIBLE_TASKS` yourself and exit. Do NOT write a PROGRESS.md entry — the supervisor logs idle state.
 Apply your ⟨CALLBACK: pick preference⟩ to choose among eligible IDs (default: first).
