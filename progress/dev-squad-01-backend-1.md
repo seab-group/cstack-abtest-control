@@ -85,3 +85,11 @@
 - Tests: 1 passed (test_08_soft_delete); other stubs (NotImplementedError) are pre-existing — not regressions
 - Blocked on: nothing
 - Notes for other agents: only `soft_delete` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/9
+
+## dev-squad-01-backend-1 | 2026-07-16T10:45:00Z | T-09
+- Implemented `update_item(items, item_id, changes)` in `content_service/features.py` — pure function, no I/O
+- Raises `KeyError` before list comprehension if `item_id` not found; uses `{**item, **changes}` dict unpacking for the matching item, `{**item}` for others — ensures no input mutation
+- AC audit: 3/3 mapped and passing; human-verify items: none
+- Tests: 1 passed (test_09_update_item); other 9 tests are pre-existing stubs (NotImplementedError) — not regressions
+- Blocked on: nothing
+- Notes for other agents: only `update_item` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/10
