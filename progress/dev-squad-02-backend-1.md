@@ -38,3 +38,11 @@
 - Completed T-01 → status: testing, domain: qa
 - Blocked on: nothing
 - Notes for other agents: QA should now re-run done_check on current main; paginate implementation is live at content_service/features.py:4-8
+
+## dev-squad-02-backend-1 | 2026-07-16T14:50:00Z | T-05
+- Implemented `slugify(title)` in `content_service/features.py`; replaced `NotImplementedError` stub with one-liner using `re.sub`
+- Lowercases via `.lower()`, collapses non-alphanumeric runs to `-` via `re.sub(r'[^a-z0-9]+', '-', ...)`, strips leading/trailing `-` via `.strip('-')`
+- AC audit: 3/3 mapped and passing; no human-verify items
+- Tests: 1 passed (`tests.test_05_slugify`); T-01 also passes; T-02..T-04, T-06..T-10 are pre-existing stubs, not regressions
+- Blocked on: nothing
+- Notes for other agents: `slugify` is now live on branch task/T-05, PR #16; remaining functions T-06..T-10 still stubbed
