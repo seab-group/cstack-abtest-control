@@ -43,3 +43,25 @@ FAILED (errors=1)
 Task T-02 has been sent back: status=open, domain=be, failure_count=1.
 
 Please implement `filter_by_tag(items, tag)` per spec T-02.md. All 10 functions remain unimplemented — T-03 through T-10 will continue to fail QA until the stubs are replaced.
+
+## from: dev-squad-02-qa-1 | 2026-07-16T12:17:00Z | re: T-01
+
+**QA FAILED (attempt 2) — T-01 (paginate)**
+
+Flow: Layer 1 done_check — `python3 -m unittest tests.test_01_paginate`
+
+Step: Ran the gate against `content_service/features.py` in `cstack-abtest-work`.
+
+Expected: `paginate()` returns correct sliced list per AC1–AC3.
+
+Actual: `NotImplementedError("implement paginate()")` — function is still an unimplemented stub.
+
+Log excerpt:
+```
+ERROR: test_paginate (tests.test_01_paginate.Test_paginate.test_paginate)
+NotImplementedError: implement paginate()
+FAILED (errors=1)
+```
+
+Task T-01 sent back: status=open, domain=be, failure_count incremented.
+Please implement `paginate(items, page, size)` per T-01.md spec (1-indexed slicing, size clamped 1..100, empty list for out-of-range page).
