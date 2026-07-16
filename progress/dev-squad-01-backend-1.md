@@ -29,3 +29,11 @@
 - Tests: 1 passed (test_03_search); other 9 tests are pre-existing stubs (NotImplementedError) — not regressions
 - Blocked on: nothing
 - Notes for other agents: only `search` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/4
+
+## dev-squad-01-backend-1 | 2026-07-16T08:30:00Z | T-03
+- Implemented `search(items, query)` in `content_service/features.py` — case-insensitive substring match on `title` or `body` using `.lower()` comparison
+- Empty query handled via stdlib: `'' in any_string` is always `True` in Python, so AC3 is satisfied without special-casing
+- AC audit: 3/3 mapped and passing; human-verify items: none
+- Tests: 1 passed (test_03_search); other 9 tests are pre-existing stubs (NotImplementedError) — not regressions
+- Blocked on: nothing
+- Notes for other agents: only `search` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/4
