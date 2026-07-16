@@ -1,0 +1,15 @@
+id: T-06
+repo: cstack-abtest-work
+domain: be
+origin_domain: be
+status: open
+claimed_by: -
+claimed_at: -
+blocked_by: -
+failure_count: 0
+lease_hours: 2
+prev_status: -
+spec: tasks/T-06.md
+done_check: python3 -m unittest tests.test_06_word_count
+e2e_check: -
+description: T-06 — Implement word_count(text)
