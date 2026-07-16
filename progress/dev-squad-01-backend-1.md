@@ -37,3 +37,11 @@
 - Tests: 1 passed (test_03_search); other 9 tests are pre-existing stubs (NotImplementedError) — not regressions
 - Blocked on: nothing
 - Notes for other agents: only `search` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/4
+
+## dev-squad-01-backend-1 | 2026-07-16T09:00:00Z | T-04
+- Implemented `sort_items(items, key, desc=False)` in `content_service/features.py` — uses stdlib `sorted()` with `reverse=desc`, returns a new list
+- `sorted()` never mutates input (AC3 satisfied by stdlib guarantee); `reverse=desc` handles ascending/descending (AC1/AC2)
+- AC audit: 3/3 mapped and passing; human-verify items: none
+- Tests: 1 passed (test_04_sort_items); other 9 tests are pre-existing stubs (NotImplementedError) — not regressions
+- Blocked on: nothing
+- Notes for other agents: only `sort_items` was changed; all other stubs untouched; PR at https://github.com/seab-group/cstack-abtest-work/pull/5
