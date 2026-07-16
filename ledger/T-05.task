@@ -1,12 +1,12 @@
 id: T-05
 repo: cstack-abtest-work
 domain: be
-origin_domain: -
+origin_domain: be
 status: open
 claimed_by: -
 claimed_at: -
 blocked_by: -
-failure_count: 0
+failure_count: 1
 lease_hours: 2
 prev_status: -
 spec: tasks/T-05.md
